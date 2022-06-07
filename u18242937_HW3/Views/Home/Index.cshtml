@@ -1,0 +1,52 @@
+﻿@using u18242937_HW3.Models;
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>My systemBuilder.</h2>
+<br />
+<h3>Some info dosage about the system I'm building.</h3>
+
+<div class="container" style="background-color:lightgray">
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <h2>Description:</h2>
+            <p>
+                This Builder is a tool that makes uploading and deleting files functionality
+                easier than ever before. You would find that after choosing and uploading a file,
+                it will take you to the file you had up loaded. This system contains my bio with
+                a dosage of my information and a nice handsome picture of myself.
+                You can choose from a range of components and check the compatibility
+                with your system to upload your perfect files such as documents, images,
+                and/or videos. If for instance you uploaded a wrong file you can able to delete
+                the file you uploaded by mistake and replace it with a correct file.
+                To simplify the selection and management of uploading/removing files, we provide
+                a platform that simplifies the process and provides you with the best
+                possible setup for your computer. HAPPY UPLOADING!!
+            </p>
+        </div>
+        <div class="col-lg-6 col-lg-6">
+            <form method="post">
+
+
+                <h2>Option Selection</h2>
+                <input type="radio" id="document" name="file_type" value="document">
+                <label for="document">Document</label><br>
+                <input type="radio" id="img" name="file_type" value="img">
+                <label for="image">Image</label><br>
+                <input type="radio" id="video" name="file_type" value="video">
+                <label for="video">Video</label><br />
+
+                @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" id="myFile" name="files">
+                    <br />
+                    <input type="submit"/>
+                }
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
